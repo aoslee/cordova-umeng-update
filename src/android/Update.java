@@ -58,54 +58,54 @@ public class Update extends CordovaPlugin {
 
     private void update(CallbackContext callback) {
          
-            UmengUpdateAgent.setUpdateAutoPopup(false);
-            UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
-                @Override
-                public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
-                    UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
-                      switch (updateStatus) {
-                        case UpdateStatus.Yes: // has update
-                            UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
-                            break;
-                        case UpdateStatus.No: // has no update
-                            Toast.makeText(cordova.getActivity(), "现在使用的已是最新版本了", Toast.LENGTH_SHORT).show();
-                            break;
-                        case UpdateStatus.NoneWifi: // none wifi
-                            Toast.makeText(cordova.getActivity(), "没有wifi连接， 只在wifi下更新", Toast.LENGTH_SHORT).show();
-                            break;
-                        case UpdateStatus.Timeout: // time out
-                            Toast.makeText(cordova.getActivity(), "超时", Toast.LENGTH_SHORT).show();
-                            break;
-                        }                    
-                }
-            });
+            // UmengUpdateAgent.setUpdateAutoPopup(false);
+            // UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
+            //     @Override
+            //     public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
+            //         UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
+            //           switch (updateStatus) {
+            //             case UpdateStatus.Yes: // has update
+            //                 UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
+            //                 break;
+            //             case UpdateStatus.No: // has no update
+            //                 Toast.makeText(cordova.getActivity(), "现在使用的已是最新版本了", Toast.LENGTH_SHORT).show();
+            //                 break;
+            //             case UpdateStatus.NoneWifi: // none wifi
+            //                 Toast.makeText(cordova.getActivity(), "没有wifi连接， 只在wifi下更新", Toast.LENGTH_SHORT).show();
+            //                 break;
+            //             case UpdateStatus.Timeout: // time out
+            //                 Toast.makeText(cordova.getActivity(), "超时", Toast.LENGTH_SHORT).show();
+            //                 break;
+            //             }                    
+            //     }
+            // });
         UmengUpdateAgent.update(cordova.getActivity());
         callback.success();
     }
 
     private void forceUpdate(CallbackContext callback) {
          
-            UmengUpdateAgent.setUpdateAutoPopup(false);
-            UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
-                @Override
-                public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
-                    UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
-                      switch (updateStatus) {
-                        case UpdateStatus.Yes: // has update
-                            UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
-                            break;
-                        case UpdateStatus.No: // has no update
-                            Toast.makeText(cordova.getActivity(), "现在使用的已是最新版本了", Toast.LENGTH_SHORT).show();
-                            break;
-                        case UpdateStatus.NoneWifi: // none wifi
-                            Toast.makeText(cordova.getActivity(), "没有wifi连接， 只在wifi下更新", Toast.LENGTH_SHORT).show();
-                            break;
-                        case UpdateStatus.Timeout: // time out
-                            Toast.makeText(cordova.getActivity(), "超时", Toast.LENGTH_SHORT).show();
-                            break;
-                        }                    
-                }
-            });
+            // UmengUpdateAgent.setUpdateAutoPopup(false);
+            // UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
+            //     @Override
+            //     public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
+            //         UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
+            //           switch (updateStatus) {
+            //             case UpdateStatus.Yes: // has update
+            //                 UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
+            //                 break;
+            //             case UpdateStatus.No: // has no update
+            //                 Toast.makeText(cordova.getActivity(), "现在使用的已是最新版本了", Toast.LENGTH_SHORT).show();
+            //                 break;
+            //             case UpdateStatus.NoneWifi: // none wifi
+            //                 Toast.makeText(cordova.getActivity(), "没有wifi连接， 只在wifi下更新", Toast.LENGTH_SHORT).show();
+            //                 break;
+            //             case UpdateStatus.Timeout: // time out
+            //                 Toast.makeText(cordova.getActivity(), "超时", Toast.LENGTH_SHORT).show();
+            //                 break;
+            //             }                    
+            //     }
+            // });
         UmengUpdateAgent.forceUpdate(cordova.getActivity());
         callback.success();
     }
