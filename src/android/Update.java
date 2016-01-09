@@ -8,6 +8,7 @@ import com.umeng.update.UmengUpdateAgent;
 import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateConfig;
 import com.umeng.update.UpdateStatus;
+import com.umeng.update.UpdateResponse;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
