@@ -62,6 +62,7 @@ public class Update extends CordovaPlugin {
             UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
                 @Override
                 public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
+                    UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
                       switch (updateStatus) {
                         case UpdateStatus.Yes: // has update
                             UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
@@ -88,6 +89,7 @@ public class Update extends CordovaPlugin {
             UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
                 @Override
                 public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
+                    UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
                       switch (updateStatus) {
                         case UpdateStatus.Yes: // has update
                             UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
