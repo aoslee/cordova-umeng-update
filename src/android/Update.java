@@ -33,7 +33,6 @@ public class Update extends CordovaPlugin {
         else if (action.equals("update")) update(callback);
         else if (action.equals("forceUpdate")) forceUpdate(callback);
         else if (action.equals("silentUpdate")) silentUpdate(callback);
-        else if (action.equals("version")) version(callbackContext);
         else return false;
         return true;
     }
