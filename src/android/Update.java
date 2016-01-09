@@ -18,6 +18,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.widget.Toast;
+
 public class Update extends CordovaPlugin {
 
     private static final String TAG = "cordova-umeng-update";
