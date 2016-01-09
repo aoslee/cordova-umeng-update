@@ -5,6 +5,7 @@ import android.util.Log;
 import com.umeng.analytics.AnalyticsConfig;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
+import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateConfig;
 import com.umeng.update.UpdateStatus;
 
