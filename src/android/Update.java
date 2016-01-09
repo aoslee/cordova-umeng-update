@@ -53,23 +53,23 @@ public class Update extends CordovaPlugin {
     }
 
     private void update(CallbackContext callback) {
-         final Context mContext = this.cordova.getActivity();
+         
             UmengUpdateAgent.setUpdateAutoPopup(false);
             UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
                 @Override
                 public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
                       switch (updateStatus) {
                         case UpdateStatus.Yes: // has update
-                            UmengUpdateAgent.showUpdateDialog(mContext, updateInfo);
+                            UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
                             break;
                         case UpdateStatus.No: // has no update
-                            Toast.makeText(mContext, "现在使用的已是最新版本了", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(cordova.getActivity(), "现在使用的已是最新版本了", Toast.LENGTH_SHORT).show();
                             break;
                         case UpdateStatus.NoneWifi: // none wifi
-                            Toast.makeText(mContext, "没有wifi连接， 只在wifi下更新", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(cordova.getActivity(), "没有wifi连接， 只在wifi下更新", Toast.LENGTH_SHORT).show();
                             break;
                         case UpdateStatus.Timeout: // time out
-                            Toast.makeText(mContext, "超时", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(cordova.getActivity(), "超时", Toast.LENGTH_SHORT).show();
                             break;
                         }                    
                 }
@@ -79,23 +79,23 @@ public class Update extends CordovaPlugin {
     }
 
     private void forceUpdate(CallbackContext callback) {
-         final Context mContext = cordova.getActivity();
+         
             UmengUpdateAgent.setUpdateAutoPopup(false);
             UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
                 @Override
                 public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
                       switch (updateStatus) {
                         case UpdateStatus.Yes: // has update
-                            UmengUpdateAgent.showUpdateDialog(mContext, updateInfo);
+                            UmengUpdateAgent.showUpdateDialog(cordova.getActivity(), updateInfo);
                             break;
                         case UpdateStatus.No: // has no update
-                            Toast.makeText(mContext, "现在使用的已是最新版本了", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(cordova.getActivity(), "现在使用的已是最新版本了", Toast.LENGTH_SHORT).show();
                             break;
                         case UpdateStatus.NoneWifi: // none wifi
-                            Toast.makeText(mContext, "没有wifi连接， 只在wifi下更新", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(cordova.getActivity(), "没有wifi连接， 只在wifi下更新", Toast.LENGTH_SHORT).show();
                             break;
                         case UpdateStatus.Timeout: // time out
-                            Toast.makeText(mContext, "超时", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(cordova.getActivity(), "超时", Toast.LENGTH_SHORT).show();
                             break;
                         }                    
                 }
